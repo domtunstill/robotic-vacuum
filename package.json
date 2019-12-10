@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "ISC",  
   "devDependencies": {
     "jasmine": "^3.5.0"
   }

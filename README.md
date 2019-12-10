@@ -33,6 +33,8 @@ Would give then following output:
 
 | Criteria      | Input         | Output|
 | ------------- |:-------------:| -----:|
+| Takes the input file and formated to an array | "5 5 " | ["5 5 "]|
+| Takes the input file and formated to an array | "5 5 \n1 2 " | ["5 5 ","1 2 "]|
 | Takes the first line as room co-ordinates | "5 5 " | room size set as 5 by 5 |
 
 
