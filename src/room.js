@@ -15,6 +15,10 @@ class Room{
     );
   };
 
+  getDirtPatches(inputArray){
+    return inputArray.slice(2, -1);
+  };
+
 };
 
 module.exports = Room;
