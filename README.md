@@ -36,7 +36,9 @@ Would give then following output:
 | Takes the input file and formated to an array | "5 4 " | ["5 4 "]|
 | Takes the input file and formated to an array | "5 4 \n1 2 " | ["5 4 ","1 2 "]|
 | Takes the input file and formated to an array | "5 4 \n1 2 \nNNESEESWNWW" | ['5 4 ', '1 2 ', 'NNESEESWNWW']|
-| Takes the first line as room co-ordinates | "5 4 " | roomDimensions set [5,4] |
+| Converts dimension string into integer array | "5 4 " | room dimensions set [5,4] |
+| Converts co-ordiante string into integer array | "1 2 " | start position set [1,2] |
+| Get dirt patch string array from original data | ['5 4 ', '1 2 ', '1 0 ', '2 2 ', '2 3 ', 'NNESEESWNWW'] | [ '1 0 ', '2 2 ', '2 3 ' ] |
 
 
 ### Edge Cases
