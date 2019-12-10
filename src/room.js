@@ -3,16 +3,20 @@ class Room{
 
   constructor(inputFile){
     this.inputFile = inputFile;
-    this.formattedInput = this.formatInput();
-    this.roomDimensions = this.getRoomDimensions();
   };
 
-  formatInput(){
-    return this.inputFile.split('\n');
+  formatInput(inputFile){
+    return inputFile.split('\n');
   };
 
-  getRoomDimensions(){
-    return this.formattedInput[0].trim().split(' ').map(
+  getRoomDimensions(dimensionString){
+    return dimensionString.trim().split(' ').map(
+      coOrd => parseInt(coOrd, 10)
+    );
+  };
+
+  getStartPosition(startString){
+    return startString.trim().split(' ').map(
       coOrd => parseInt(coOrd, 10)
     );
   };
