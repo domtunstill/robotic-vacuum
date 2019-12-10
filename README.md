@@ -33,22 +33,8 @@ Would give then following output:
 
 | Criteria      | Input         | Output|
 | ------------- |:-------------:| -----:|
-| Account balance to be 0 on initializaton   | none | Balance to be 0 |
-| Account initilizes with an empty history of transactions  | none | Transactions to be empty |
-| Prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
-| Balance updated: Customer deposits 1000 | 1000 |Balance to be 1000|
-| Transaction saved: Customer deposits 1000 | 1000 | 1 transaction to be stored in transactions|
-| Transaction amount saved: Customer deposits 1000 | 1000 | 1000 to be returned |
-| Post transaction balance is saved: Customer deposits 1000 | 1000 | 1000 to be returned |
-| Transaction date saved: Customer deposits 1000 | 1000 | 10/01/2012 |
-| Print statement after customer deposits 1000 on 10-01-2012 | 1000 | 10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|
-| Balance updated: Customer withdraws 500 (with balance of 1000) | 500 |Balance to be 500|
-| Customer can't withdraw if withdrawal is more than balance | 500 |Balance to be 0|
-| Transaction saved: Customer withdraws 500 | 500 | 2 transaction to be stored in transactions|
-| Transaction amount saved: Customer withdraws 500 | 500 | 500 to be returned |
-| Post transaction balance is saved: Customer withdraws 500 (with balance of 1000) | 500 | 500 to be returned |
-| Transaction date saved: Customer withdraws 500 | 500 | 14/01/2012 |
-| Print statement after customer withdraws 500 on 14-01-2012 | 500 | 14/01/2012 &#124;&#124; 500.00 &#124;&#124; &#124;&#124; 500.00|
+| Takes the first line as room co-ordinates | "5 5 " | room size set as 5 by 5 |
+
 
 ### Edge Cases
 
