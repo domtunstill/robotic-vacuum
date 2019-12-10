@@ -46,4 +46,12 @@ describe('Formatter', function(){
     });
   });
 
+  describe('coordinatesConvertToStr', function(){
+
+    it('tracks the vacuum movement if moved west', function(){
+      expect(formatter.coordinatesConvertToStr([1, 2])).toEqual('1 2 ');
+    });
+
+  });
+
 });

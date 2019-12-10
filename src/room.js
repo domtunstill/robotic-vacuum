@@ -1,4 +1,5 @@
 'use strict';
+
 class Room{
 
   constructor(inputFile){
@@ -15,32 +16,13 @@ class Room{
     return inputArray.slice(2, -1);
   };
 
-  moveVacuum(position, move){
-    if (move === 'N'){
-      position[1] += 1;
-      return position;
-    };
-    if (move === 'E'){
-      position[0] += 1;
-      return position;
-    };
-    if (move === 'S'){
-      position[1] -= 1;
-      return position;
-    };
-    if (move === 'W'){
-      position[0] -= 1;
-      return position;
-    };
-  };
-
   vacuumLocationHistory(startPosition, instructions){
-    var history = [this.coordinatesConvertToStr(startPosition)];
+    var history = [startPosition];
     var i;
-    var currentPosition = startPosition;
+    var currentPosition = startPosition.slice(0);
     for (i = 0; i < instructions.length; i++) {
       currentPosition = this.moveVacuum(currentPosition, instructions[i]);
-      history[i + 1] = this.coordinatesConvertToStr(currentPosition);
+      history.push(currentPosition.slice(0));
     };
     return history;
   };
@@ -60,16 +42,12 @@ class Room{
     return numberCleaned;
   };
 
-  formatCleaningReport(finalPosition, numberCleaned){
+  createCleaningReport(finalPosition, numberCleaned){
     return finalPosition + '\n' + numberCleaned;
   };
 
   printCleaningReport(report){
     console.log(report);
-  };
-
-  coordinatesConvertToStr(coordArray){
-    return coordArray.join(' ') + ' ';
   };
 
 };

@@ -9,5 +9,10 @@ function strConvertToCoordinates(coordString){
   );
 };
 
+function coordinatesConvertToStr(coordArray){
+  return coordArray.join(' ') + ' ';
+};
+
 module.exports.formatInput = formatInput;
 module.exports.strConvertToCoordinates = strConvertToCoordinates;
+module.exports.coordinatesConvertToStr = coordinatesConvertToStr;
