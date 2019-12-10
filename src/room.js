@@ -9,14 +9,8 @@ class Room{
     return inputFile.split('\n');
   };
 
-  getRoomDimensions(dimensionString){
-    return dimensionString.trim().split(' ').map(
-      coOrd => parseInt(coOrd, 10)
-    );
-  };
-
-  getStartPosition(startString){
-    return startString.trim().split(' ').map(
+  convertStrCoOrdinates(coOrdString){
+    return coOrdString.trim().split(' ').map(
       coOrd => parseInt(coOrd, 10)
     );
   };
