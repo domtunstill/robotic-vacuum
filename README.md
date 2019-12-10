@@ -33,9 +33,10 @@ Would give then following output:
 
 | Criteria      | Input         | Output|
 | ------------- |:-------------:| -----:|
-| Takes the input file and formated to an array | "5 5 " | ["5 5 "]|
-| Takes the input file and formated to an array | "5 5 \n1 2 " | ["5 5 ","1 2 "]|
-| Takes the first line as room co-ordinates | "5 5 " | room size set as 5 by 5 |
+| Takes the input file and formated to an array | "5 4 " | ["5 4 "]|
+| Takes the input file and formated to an array | "5 4 \n1 2 " | ["5 4 ","1 2 "]|
+| Takes the input file and formated to an array | "5 4 \n1 2 \nNNESEESWNWW" | ['5 4 ', '1 2 ', 'NNESEESWNWW']|
+| Takes the first line as room co-ordinates | "5 4 " | roomDimensions set [5,4] |
 
 
 ### Edge Cases

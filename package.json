@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "istanbul cover --include-all-sources jasmine-node spec",
-    "pretest": "eslint --ignore-path .gitignore ."
+    "pretest": "eslint --fix --ignore-path .gitignore ."
   },
   "keywords": [],
   "author": "",

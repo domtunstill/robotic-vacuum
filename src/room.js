@@ -2,16 +2,19 @@
 class Room{
 
   constructor(inputFile){
-    this.formattedInput = this.formatInput(inputFile);
-    this.xDimension = this.getXDimension();
+    this.inputFile = inputFile;
+    this.formattedInput = this.formatInput();
+    this.roomDimensions = this.getRoomDimensions();
   };
 
-  formatInput(inputFile){
-    return inputFile.split('\n');
+  formatInput(){
+    return this.inputFile.split('\n');
   };
 
-  getXDimension(){
-    return parseInt(this.formattedInput[0], 10);
+  getRoomDimensions(){
+    return this.formattedInput[0].trim().split(' ').map(
+      coOrd => parseInt(coOrd, 10)
+    );
   };
 
 };

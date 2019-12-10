@@ -7,26 +7,40 @@ describe('Room', function(){
   //     room = new Room();
   // });
 
-  it('converts input into array based on lines', function(){
-    var room = new RoomClass('5 5 ');
-    expect(room.formattedInput).toEqual(['5 5 ']);
+  describe('formatInput', function(){
+    it('converts input into array based on lines', function(){
+      var room = new RoomClass('5 4 ');
+      expect(room.formattedInput).toEqual(['5 4 ']);
+    });
+
+    it('converts input into array based on lines', function(){
+      var room = new RoomClass('5 4 \n1 2 ');
+      expect(room.formattedInput).toEqual(['5 4 ', '1 2 ']);
+    });
+
+    it('converts input into array based on lines', function(){
+      var room = new RoomClass('5 4 \n1 2 \nNNESEESWNWW');
+      expect(room.formattedInput).toEqual(
+        ['5 4 ', '1 2 ', 'NNESEESWNWW']
+      );
+    });
   });
 
-  it('converts input into array based on lines', function(){
-    var room = new RoomClass('5 5 \n1 2 ');
-    expect(room.formattedInput).toEqual(['5 5 ', '1 2 ']);
-  });
+  describe('getRoomDimensions', function(){
+    it('gets the x dimension from first line of the input', function(){
+      var room = new RoomClass('5 4 ');
+      expect(room.roomDimensions[0]).toBe(5);
+    });
 
-  it('converts input into array based on lines', function(){
-    var room = new RoomClass('5 5 \n1 2 \nNNESEESWNWW');
-    expect(room.formattedInput).toEqual(
-      ['5 5 ', '1 2 ', 'NNESEESWNWW']
-    );
-  });
+    it('gets the y dimension from first line of the input', function(){
+      var room = new RoomClass('5 4 ');
+      expect(room.roomDimensions[1]).toBe(4);
+    });
 
-  it('gets the x dimension from first line of the input', function(){
-    var room = new RoomClass('5 5 ');
-    expect(room.xDimension).toBe(5);
+    it('gets the y dimension from first line of the input', function(){
+      var room = new RoomClass('5 4 ');
+      expect(room.roomDimensions).toEqual([5, 4]);
+    });
   });
 
 });
