@@ -63,7 +63,7 @@ Framework - Jasmine
 
 Linter - 
 
-Test Coverage Analyser - Simplecov
+Test Coverage Analyser - Istanbul
 
 ## Installation
 
