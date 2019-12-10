@@ -146,6 +146,91 @@ describe('Room', function(){
       );
     });
 
+    it('stores all moves', function(){
+      expect(room.vacuumLocationHistory([1, 2], 'NNESEESWNWW')).toEqual(
+        [
+          '1 2 ', '1 3 ',
+          '1 4 ', '2 4 ',
+          '2 3 ', '3 3 ',
+          '4 3 ', '4 2 ',
+          '3 2 ', '3 3 ',
+          '2 3 ', '1 3 ',
+        ]
+      );
+    });
+
+  });
+
+  describe('finalPosition', function(){
+    var room;
+
+    beforeEach(function(){
+      room = new RoomClass(inputData);
+    });
+
+    it('calculates how many dirt patches have been cleaned', function(){
+      expect(room.finalPosition(['1 2 ', '1 3 ', '1 4 '])).toEqual('1 4 ');
+    });
+
+  });
+
+  describe('dirtPatchesCleaned', function(){
+    var room;
+    var dirtPatches = ['1 2 ', '1 3 ', '1 4 '];
+
+    beforeEach(function(){
+      room = new RoomClass(inputData);
+    });
+
+    it('calculates how many dirt patches have been cleaned', function(){
+      expect(room.dirtPatchesCleaned(
+        dirtPatches,
+        ['2 3 ', '1 3 ', '0 3 ']
+      )).toBe(1);
+    });
+
+    it('calculates how many dirt patches have been cleaned', function(){
+      expect(room.dirtPatchesCleaned(
+        dirtPatches,
+        ['2 3 ', '1 3 ', '1 2 ']
+      )).toBe(2);
+    });
+
+    it('calculates how many dirt patches have been cleaned', function(){
+      expect(room.dirtPatchesCleaned(
+        dirtPatches,
+        ['2 3 ', '2 4 ', '1 4 ', '1 3 ', '1 2 ']
+      )).toBe(3);
+    });
+
+  });
+
+  describe('formatCleaningReport', function(){
+    var room;
+
+    beforeEach(function(){
+      room = new RoomClass(inputData);
+    });
+
+    it('calculates how many dirt patches have been cleaned', function(){
+      expect(room.formatCleaningReport('1 3 ', 1)).toEqual('1 3 \n1');
+    });
+
+  });
+
+  describe('printCleaningReport', function(){
+    var room;
+
+    beforeEach(function(){
+      room = new RoomClass(inputData);
+      spyOn(console, 'log');
+    });
+
+    it('calculates how many dirt patches have been cleaned', function(){
+      room.printCleaningReport('1 3 \n1');
+      expect(console.log).toHaveBeenCalledWith('1 3 \n1');
+    });
+
   });
 
 });

@@ -36,14 +36,36 @@ class Room{
 
   vacuumLocationHistory(startPosition, instructions){
     var history = [this.coordinatesConvertToStr(startPosition)];
-    var numberOfInstructions = instructions.length;
     var i;
     var currentPosition = startPosition;
-    for (i = 0; i < numberOfInstructions; i++) {
+    for (i = 0; i < instructions.length; i++) {
       currentPosition = this.moveVacuum(currentPosition, instructions[i]);
       history[i + 1] = this.coordinatesConvertToStr(currentPosition);
     };
     return history;
+  };
+
+  finalPosition(vacuumLocations){
+    return vacuumLocations.pop();
+  };
+
+  dirtPatchesCleaned(dirtPatches, vacuumLocations){
+    var numberCleaned = 0;
+    dirtPatches.forEach(
+      patch => {
+        if (vacuumLocations.includes(patch)){
+          numberCleaned += 1;
+        }
+      });
+    return numberCleaned;
+  };
+
+  formatCleaningReport(finalPosition, numberCleaned){
+    return finalPosition + '\n' + numberCleaned;
+  };
+
+  printCleaningReport(report){
+    console.log(report);
   };
 
   formatInput(inputFile){
