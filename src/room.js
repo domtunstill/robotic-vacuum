@@ -5,7 +5,7 @@ module.exports = class Room{
     };
 
     formatInput(inputFile){
-        return [inputFile] 
+        return inputFile.split('\n');
     };
 
 };
