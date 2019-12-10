@@ -24,10 +24,9 @@ describe('Room', function(){
     );
   });
 
-  // it ('takes the room dimensions from the first li
-  // ne of the input', function(){
-  //     room = new roomClass('5 5 ');
-  //     expect(room.x_dimension).toBe(5)
-  // });
+  it('gets the x dimension from first line of the input', function(){
+    var room = new RoomClass('5 5 ');
+    expect(room.xDimension).toBe(5);
+  });
 
 });
