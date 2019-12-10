@@ -134,6 +134,18 @@ describe('Room', function(){
       expect(room.vacuumLocationHistory([1, 2], 'E')).toEqual(['1 2 ', '2 2 ']);
     });
 
+    it('stores a list of three moves if vacuum moved twice', function(){
+      expect(room.vacuumLocationHistory([1, 2], 'NN')).toEqual(
+        ['1 2 ', '1 3 ', '1 4 ']
+      );
+    });
+
+    it('stores a list of four moves if vacuum moved three times', function(){
+      expect(room.vacuumLocationHistory([1, 2], 'NNE')).toEqual(
+        ['1 2 ', '1 3 ', '1 4 ', '2 4 ']
+      );
+    });
+
   });
 
 });

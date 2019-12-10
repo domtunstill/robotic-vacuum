@@ -35,10 +35,14 @@ class Room{
   };
 
   vacuumLocationHistory(startPosition, instructions){
-    var history = [this.coordinatesConvertToStr(startPosition), ''];
-    history[1] = this.coordinatesConvertToStr(
-      this.moveVacuum(startPosition, instructions)
-    );
+    var history = [this.coordinatesConvertToStr(startPosition)];
+    var numberOfInstructions = instructions.length;
+    var i;
+    var currentPosition = startPosition;
+    for (i = 0; i < numberOfInstructions; i++) {
+      currentPosition = this.moveVacuum(currentPosition, instructions[i]);
+      history[i + 1] = this.coordinatesConvertToStr(currentPosition);
+    };
     return history;
   };
 
