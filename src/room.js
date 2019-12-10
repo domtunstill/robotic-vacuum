@@ -2,11 +2,13 @@
 class Room{
 
   constructor(inputFile){
-    this.inputFile = inputFile;
-    this.formattedInput = this.formatInput(inputFile);
-    this.roomDimensions = this.convertStrCoOrdinates(this.formattedInput[0]);
-    this.currentPosition = this.convertStrCoOrdinates(this.formattedInput[1]);
-    this.dirtPatches = this.getDirtPatches(this.formattedInput);
+    // this.inputFile = inputFile;
+    // this.formattedInput = this.formatInput(inputFile);
+    // this.roomDimensions =
+    // this.convertStrCoOrdinates(this.formattedInput[0]);
+    // this.currentPosition =
+    // this.convertStrCoOrdinates(this.formattedInput[1]);
+    // this.dirtPatches = this.getDirtPatches(this.formattedInput);
   };
 
   getDirtPatches(inputArray){
@@ -32,14 +34,26 @@ class Room{
     };
   };
 
+  vacuumLocationHistory(startPosition, instructions){
+    var history = [this.coordinatesConvertToStr(startPosition), ''];
+    history[1] = this.coordinatesConvertToStr(
+      this.moveVacuum(startPosition, instructions)
+    );
+    return history;
+  };
+
   formatInput(inputFile){
     return inputFile.split('\n');
   };
 
-  convertStrCoOrdinates(coOrdString){
-    return coOrdString.trim().split(' ').map(
-      coOrd => parseInt(coOrd, 10)
+  strConvertToCoordinates(coordString){
+    return coordString.trim().split(' ').map(
+      coord => parseInt(coord, 10)
     );
+  };
+
+  coordinatesConvertToStr(coordArray){
+    return coordArray.join(' ') + ' ';
   };
 
 };
