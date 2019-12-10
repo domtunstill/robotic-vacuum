@@ -5,29 +5,6 @@ describe('Room', function(){
 
   var inputData = '5 4 \n1 2 \n1 0 \n2 2 \n2 3 \nNNESEESWNWW';
 
-  describe('formatInput', function(){
-    var room;
-
-    beforeEach(function(){
-      room = new RoomClass(inputData);
-    });
-
-    it('converts input into array based on line breaks', function(){
-      expect(room.formatInput('5 4 ')).toEqual(['5 4 ']);
-    });
-
-    it('converts input into array based on line breaks', function(){
-      expect(room.formatInput('5 4 \n1 2 ')).toEqual(['5 4 ', '1 2 ']);
-    });
-
-    it('converts input into array based on line breaks', function(){
-      var room = new RoomClass('5 4 \n1 2 \nNNESEESWNWW');
-      expect(room.formatInput('5 4 \n1 2 \nNNESEESWNWW')).toEqual(
-        ['5 4 ', '1 2 ', 'NNESEESWNWW']
-      );
-    });
-  });
-
   describe('strConvertToCoordinates', function(){
     var room;
 

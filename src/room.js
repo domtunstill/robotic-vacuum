@@ -68,10 +68,6 @@ class Room{
     console.log(report);
   };
 
-  formatInput(inputFile){
-    return inputFile.split('\n');
-  };
-
   strConvertToCoordinates(coordString){
     return coordString.trim().split(' ').map(
       coord => parseInt(coord, 10)
