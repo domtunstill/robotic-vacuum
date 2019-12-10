@@ -1,1 +1,2 @@
-var room = require('./room');
+'use strict';
+// var room = require('./room');

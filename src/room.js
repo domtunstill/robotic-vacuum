@@ -1,12 +1,14 @@
-'use strict'
-module.exports = class Room{
-    
-    constructor(inputFile){
-        this.formattedInput = this.formatInput(inputFile);
-    };
+'use strict';
+class Room{
 
-    formatInput(inputFile){
-        return inputFile.split('\n');
-    };
+  constructor(inputFile){
+    this.formattedInput = this.formatInput(inputFile);
+  };
+
+  formatInput(inputFile){
+    return inputFile.split('\n');
+  };
 
 };
+
+module.exports = Room;
