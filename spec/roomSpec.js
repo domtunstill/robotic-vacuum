@@ -5,38 +5,6 @@ describe('Room', function(){
 
   var inputData = '5 4 \n1 2 \n1 0 \n2 2 \n2 3 \nNNESEESWNWW';
 
-  describe('strConvertToCoordinates', function(){
-    var room;
-
-    beforeEach(function(){
-      room = new RoomClass(inputData);
-    });
-
-    it('gets the x dimension from the input', function(){
-      expect(room.strConvertToCoordinates('5 4 ')[0]).toBe(5);
-    });
-
-    it('gets the y dimension from the input', function(){
-      expect(room.strConvertToCoordinates('5 4 ')[1]).toBe(4);
-    });
-
-    it('gets the string and saves it as an array of integers', function(){
-      expect(room.strConvertToCoordinates('5 4 ')).toEqual([5, 4]);
-    });
-
-    it('gets the x co-ordinate from the input', function(){
-      expect(room.strConvertToCoordinates('1 2 ')[0]).toBe(1);
-    });
-
-    it('gets the y co-ordinate  from the input', function(){
-      expect(room.strConvertToCoordinates('1 2 ')[1]).toBe(2);
-    });
-
-    it('gets the string and saves it as an array of integers', function(){
-      expect(room.strConvertToCoordinates('1 2 ')).toEqual([1, 2]);
-    });
-  });
-
   describe('getDirtPatches', function(){
     var room;
     var inputArray = ['5 4 ', '1 2 ', '1 0 ', '2 2 ', '2 3 ', 'NNESEESWNWW'];

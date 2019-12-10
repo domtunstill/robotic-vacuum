@@ -68,12 +68,6 @@ class Room{
     console.log(report);
   };
 
-  strConvertToCoordinates(coordString){
-    return coordString.trim().split(' ').map(
-      coord => parseInt(coord, 10)
-    );
-  };
-
   coordinatesConvertToStr(coordArray){
     return coordArray.join(' ') + ' ';
   };
