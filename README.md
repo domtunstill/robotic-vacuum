@@ -2,6 +2,11 @@
 
 Robotic-vacuum is a Javascript library that allows a user to provide input instructions for a robotic cleaner which include room size, cleaner start-point, locations of dirt patches and movement instructions. The library returns information about the cleanup including: how many dirt patches have been cleaned up as well as the final location of the hoover.
 
+<p align="center">
+		 
+[Specification](#specification) | [Approach and Code Structure](#approach) | [App](#app) | [Installation](#installation) | [Usage](#usage)
+</p>
+
 ## Specification
 
 ### Requirements
