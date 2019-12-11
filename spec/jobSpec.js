@@ -70,15 +70,4 @@ describe('Job', function(){
 
   });
 
-  describe('finalPosition', function(){
-
-    beforeEach(function(){
-      job = new Job(inputData);
-    });
-
-    it('returns the final position of the cleaner', function(){
-      expect(job.finalPosition()).toEqual('1 3 ');
-    });
-
-  });
 });

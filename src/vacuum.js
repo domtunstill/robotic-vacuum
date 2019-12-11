@@ -18,4 +18,10 @@ function moveVacuum(position, move, roomDims){
   return position;
 };
 
+
+function finalVacuumPosition(vacuumLocations){
+  return vacuumLocations.pop();
+};
+
 module.exports.moveVacuum = moveVacuum;
+module.exports.finalVacuumPosition = finalVacuumPosition;

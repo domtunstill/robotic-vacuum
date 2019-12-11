@@ -7,7 +7,7 @@ var inputData = fs.readFileSync('input.txt', 'utf8');
 var job = new Job(inputData);
 
 var jobReport = report.createCleaningReport(
-  job.finalPosition(), job.dirtPatchesCleaned
+  job.finalVacuumPosition, job.dirtPatchesCleaned
 );
 
 report.printCleaningReport(jobReport);

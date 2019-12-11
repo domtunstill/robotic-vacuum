@@ -15,6 +15,7 @@ class Job{
       this.instructions
     );
     this.dirtPatchesCleaned = this.getDirtPatchesCleaned(this.room.dirtPatches);
+    this.finalVacuumPosition = vacuum.finalVacuumPosition(this.vacuumLocations);
   };
 
   vacuumLocationHistory(startPosition, instructions){
@@ -44,10 +45,6 @@ class Job{
         }
       });
     return dirtPatchesCleaned;
-  };
-
-  finalPosition(){
-    return this.vacuumLocations.pop();
   };
 
 };
