@@ -104,17 +104,25 @@ Index
 
 * Reads the data file and passes it to the Job class. The index.js file allows the app to be executed from the command line in one command.
 
+### Additional Work (if I had more time)
+
+* The app is not setup to retrieve a file hosted remotely, this feature would need to be added. This would be the next feature to add.
+* The app is not fully tested against the edge cases talked about above, these would need to have tests written for them and then amend the code to suit. 
+
 ## App 
 
 Node version '12.11.1'
 
+
 ### Testing and Code Quality
+
+Test Coverage is Above >95%
 
 Framework - Jasmine 
 
 Linter - ESLint
 
-Test Coverage Analyser - Istanbul
+Test Coverage Analyser - Istanbul 
 
 ## Installation
 
@@ -132,6 +140,10 @@ With index.txt within in the root of the directory, run the following command in
 $ npm start
 ```
 
+### App Screenshot
+
+![App Usage](/images/AppUsageScreenshot.png)
+
 This will produce an output.txt file with the final hoover position (X, Y) and he number of patches of dirt the robot cleaned up. This information will also be logged to the console.
 
 Run the following command in the project directory to run the tests:
@@ -140,13 +152,6 @@ Run the following command in the project directory to run the tests:
 $ npm test
 ```
  (ESLint will run automatically before commencing with the testing)
-
-### App Screenshot
-
-![App Usage](/images/AppUsageScreenshot.png)
-
-## Contributing
-
 
 ## License
 [MIT](domtunstill)
