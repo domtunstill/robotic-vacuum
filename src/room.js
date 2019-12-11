@@ -1,15 +1,12 @@
 'use strict';
 
+var formatter = require('../src/formatter');
+
 class Room{
 
-  constructor(){
-    // this.inputFile = inputFile;
-    // this.formattedInput = this.formatInput(inputFile);
-    // this.dimensions = [5, 5];
-    // this.convertStrCoOrdinates(this.formattedInput[0]);
-    // this.currentPosition =
-    // this.convertStrCoOrdinates(this.formattedInput[1]);
-    // this.dirtPatches = this.getDirtPatches(this.formattedInput);
+  constructor(inputData){
+    this.dimensions = formatter.strConvertToCoordinates(inputData[0]);
+    this.dirtPatches = this.getDirtPatches(inputData);
   };
 
   getDirtPatches(inputArray){
