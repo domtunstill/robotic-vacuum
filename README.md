@@ -139,7 +139,7 @@ $ npm install
 
 ## Usage
 
-With index.txt within in the root of the directory, run the following command in the project directory:
+With index.txt within the root of the directory, run the following command in the project directory:
 
 ```
 $ npm start
