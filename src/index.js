@@ -2,12 +2,20 @@
 var fs = require('fs');
 var Job = require('./job');
 var report = require('./cleaningReport');
+var job;
 
-var inputData = fs.readFileSync('input.txt', 'utf8');
-var job = new Job(inputData);
+function newJob(callback){
+  fs.readFile('input.txt', 'utf8', function(err, data){
+    job = new Job(data);
+    callback();
+  });
+};
 
-var jobReport = report.createCleaningReport(
-  job.finalVacuumPosition, job.dirtPatchesCleaned
-);
+function printReport(){
+  report.printCleaningReport(report.createCleaningReport(
+    job.finalVacuumPosition, job.dirtPatchesCleaned
+  ))
+};
 
-report.printCleaningReport(jobReport);
+newJob(printReport);
+
