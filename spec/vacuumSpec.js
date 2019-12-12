@@ -38,14 +38,4 @@ describe('Vacuum', function(){
 
   });
 
-  describe('finalVacuumPosition', function(){
-
-    it('returns the final position of the cleaner', function(){
-      expect(vacuum.finalVacuumPosition(
-        ['2 4 ', '1 4 ', '1 3 ']
-      )).toEqual('1 3 ');
-    });
-
-  });
-
 });

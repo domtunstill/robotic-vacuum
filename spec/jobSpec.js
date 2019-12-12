@@ -70,4 +70,14 @@ describe('Job', function(){
 
   });
 
+  describe('getFinalVacuumPosition', function(){
+
+    it('returns the final position of the cleaner', function(){
+      expect(job.getFinalVacuumPosition(
+        ['2 4 ', '1 4 ', '1 3 ']
+      )).toEqual('1 3 ');
+    });
+
+  });
+
 });

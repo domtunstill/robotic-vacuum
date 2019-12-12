@@ -4,18 +4,22 @@ var Job = require('./job');
 var report = require('./cleaningReport');
 var job;
 
-function newJob(callback){
+function getJob(callbackOne, callbackTwo){
   fs.readFile('input.txt', 'utf8', function(err, data){
-    job = new Job(data);
-    callback();
+    if (err) throw err;
+    callbackOne(data);
+    callbackTwo();
   });
+};
+
+function newJob(jobInfo){
+  job = new Job(jobInfo);
 };
 
 function printReport(){
   report.printCleaningReport(report.createCleaningReport(
     job.finalVacuumPosition, job.dirtPatchesCleaned
-  ))
+  ));
 };
 
-newJob(printReport);
-
+getJob(newJob, printReport);
