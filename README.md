@@ -1,6 +1,11 @@
 # Robotic-vacuum
 
-Robotic-vacuum is a Javascript library that allows a user to provide input instructions for a robotic cleaner which include room size, cleaner start-point, locations of dirt patches and movement instructions. The library uses this and returns information on how many dirt patches have been cleaned up as well as the final location of the hoover.
+Robotic-vacuum is a Javascript library that allows a user to provide input instructions for a robotic cleaner which include room size, cleaner start-point, locations of dirt patches and movement instructions. The library returns information about the cleanup including: how many dirt patches have been cleaned up as well as the final location of the hoover.
+
+<p align="center">
+		 
+[Specification](#specification) | [Approach and Code Structure](#approach) | [App](#app) | [Installation](#installation) | [Usage](#usage)
+</p>
 
 ## Specification
 
@@ -62,7 +67,7 @@ Secondar
 
 ### Edge Cases
 
-- User provides an input.txt with invalid data i.e. no driving instructions or only 2 sets of co-ordinates (this is not tested for but identified as an edge case)
+- User provides an input.txt with invalid data i.e. no driving instructions or only 2 sets of co-ordinates (this is not tested for, see additonal work below)
 
 ## Approach and Code Structure
 
@@ -134,7 +139,7 @@ $ npm install
 
 ## Usage
 
-With index.txt within in the root of the directory, run the following command in the project directory:
+With index.txt within the root of the directory, run the following command in the project directory:
 
 ```
 $ npm start
